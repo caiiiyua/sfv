@@ -25,6 +25,7 @@ func Index(w http.ResponseWriter, r *http.Request, _ httprouter.Params) {
 	if err != nil {
 		fmt.Fprint(w, "Error: %v\n", err)
 	}
+	fmt.Println("Get Request for Index ....")
 	fmt.Fprint(w, string(data))
 }
 
