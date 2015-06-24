@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<html ng-app="myapp">
+  <head>
+    <title>Users</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/css/index.css">
+    <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
+    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/bootstrap.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="/js/myapp.js" type="text/javascript" charset="utf-8"></script>
+  </head>
+
+  <body ng-controller="MainController">
+  	<h1>User Items</h1>
+  	<input type="text" placeholder="Please input some words ..." ng-model="message">
+  	<p>input:{{ message }}</p>
+    <p>{{message + message}}</p>
+    <p ng-bind="message"></p>
+  </body>
+</html>
