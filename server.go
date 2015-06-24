@@ -65,8 +65,8 @@ func sfvTask(url string) {
 		fmt.Println("get from html as result:", alt)
 		if strings.Contains(alt, NOT_AVAILABLE) {
 			fmt.Println(time.Now().Format("2006-01-02 15:04:06"), alt, ", please waiting for available")
-			notify("Hi Sfver:</br> Some of SFVs are available! please try one via the link below: </br><a href=\"http://www.immigration.govt.nz/migrant/stream/work/silverfern/jobsearch.htm\">http://www.immigration.govt.nz/migrant/stream/work/silverfern/jobsearch.htm</a>")
 		} else {
+			notify("Hi Sfver:</br> Some of SFVs are available! please try one via the link below: </br><a href=\"http://www.immigration.govt.nz/migrant/stream/work/silverfern/jobsearch.htm\">http://www.immigration.govt.nz/migrant/stream/work/silverfern/jobsearch.htm</a>")
 			fmt.Println(time.Now().Format("2006-01-02 15:04:06"), "Some of SFVs are available! :-)")
 		}
 	})
