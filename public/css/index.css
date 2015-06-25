@@ -1,0 +1,61 @@
+a {
+  color: #999;
+}
+a.hover {
+  color: #fff;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #333;
+}
+body {
+  /*color: #fff;*/
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+
+/*
+ * Cover
+ */
+
+.cover {
+  margin-top: 180px;
+  padding: 0 40px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
+.cover-heading {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: Helvetica, sans-serif;
+  font-size: 68px;
+  color: #fff;
+}
+
+.email-box {
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.footer {
+  margin-bottom: 20px;
+}
+
+.statistic {
+  color: #fff;
+}
+
+#link {
+  border: 2px solid #aaa;
+  padding: 10px;
+}
+
+#email {
+  width: 480px;
+}

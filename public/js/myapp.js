@@ -1,6 +1,7 @@
 (function() {
-	var app = angular.module('myapp', ['ngMap']);
+	var app = angular.module('myapp', []);
 	app.controller('MainController', function() {
-		this.message = "hello"
+		this.message = "hello";
+		this.user_num = 1;
 	});
 })();
