@@ -21,22 +21,21 @@
     <script src="/js/myapp.js" type="text/javascript" charset="utf-8"></script>
   </head>
 
-  <body ng-controller="MainController">
+  <body ng-controller="MainController as main">
     <div class="cover">
       <img id="logo" src="http://img2.imgtn.bdimg.com/it/u=2555238761,1521374877&fm=15&gp=0.jpg">
     	<h1 class="cover-heading">Silver Fern Visa Sporadic</h1>
       <a id="link" href="http://www.immigration.govt.nz/migrant/stream/work/silverfern/jobsearch.htm" title="Immigration - New Zealand">Immigration - New Zealand</a>
       <div class="email-box">        
-        <input id="email" class="input-lg" type="email" placeholder="Enter your email address to receive notification" ng-model="email">
-        <button class="btn-primary btn-lg">Notify Me!</button>
+        <input id="email" class="input-lg" type="email" placeholder="Enter your email address to receive notification" ng-model="main.email">
+        <button class="btn-primary btn-lg" ng-click="main.addUser()">Notify Me!</button>
       </div>
       <div class="statistic">
-        <p>{{user_num}} people are waiting for notification.</p> 
-        <p ng-repeat="date in datelist"></p>
+        <p ng-hide="{{main.user_count==0}}">{{main.user_count}} people are waiting for notification.</p> 
+        <div ng-repeat="user in main.users">
+          <p>Email: {{user}}</p>
+        </div>
       </div>
-      <input class="input-lg" type="text" ng-model="message">
-      <p>input: {{message}}</p>
-      <p ng-bind="message"></p>
     </div>
   </body>
 </html>

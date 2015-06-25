@@ -48,7 +48,8 @@ body {
 }
 
 .statistic {
-  color: #fff;
+  color: #aaa;
+  font-family: Helvetica, sans-serif;
 }
 
 #link {
