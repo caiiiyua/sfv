@@ -78,8 +78,8 @@ func sfvTaskSchedule() {
 	url := "http://www.immigration.govt.nz/migrant/stream/work/silverfern/jobsearch.htm"
 	for {
 		sfvTask(url)
-		time.Sleep(60 * 1e9)
-		fmt.Println("Next task will be started 60s later...")
+		time.Sleep(120 * 1e9)
+		fmt.Println("Next task will be started 120s later...")
 	}
 }
 
