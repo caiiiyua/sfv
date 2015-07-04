@@ -60,3 +60,7 @@ body {
 #email {
   width: 480px;
 }
+
+#logo {
+  opacity: 0.2;
+}
