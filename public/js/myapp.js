@@ -1,29 +1,39 @@
 (function() {
 	var app = angular.module('myapp', []);
-	app.controller('MainController', ['$http', function($http) {
-		this.message = "hello";
-		this.users = users;
-		this.user_count = users.length;
-		this.email = "";
+	app.controller('MainController', ['$scope', '$http', function($scope, $http) {
+		$scope.message = "hello";
+		$scope.user_count = users.length;
+		$scope.email = "";
+		$scope.users = [];
 
-		this.addUser = function() {
-			if (this.email.length > 0) {
-			email = this.email;
-			var res = $http.post('/sfvers', {'email': email});
-			res.success(function(data, status, headers, config) {
-				this.user_count = data;
-			});
-			users.push(this.email);
-			this.email = "";
-			this.users = users;
-			// this.user_count = users.length;
+		$scope.addUser = function() {
+			if ($scope.email.length > 0) {
+				email = $scope.email;
+				$scope.users.push($scope.email);
+				$scope.email = "";
+				var res = $http.post('/sfvers', {'email':email});
+				res.success(function(data, status, headers, config) {
+					$scope.user_count = data.count;
+				});
 			};
 
 		};
+
+		$scope.getCount = function() {
+			$http.get('/sfvers')
+			.success(function(data) {
+				$scope.user_count = data.count;
+				users = data.sfvers;
+				for (var i = 0; i < users.length; i++) {
+					if (users[i].Email.length > 0) {
+						$scope.users.push(users[i].Email)
+					};
+				};
+			});
+		};
+		$scope.getCount();
 	}]);
 
 	var users = [
-		'ckjacket@mm.com',
-		'kkk@ls.com'
 	];
 })();

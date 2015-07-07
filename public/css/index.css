@@ -62,5 +62,13 @@ body {
 }
 
 #logo {
-  opacity: 0.2;
+  opacity: 0.3;
+}
+
+.input-group {
+  display: block;
+}
+
+.input-group-btn {
+  display: inline-table;
 }

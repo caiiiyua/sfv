@@ -6,34 +6,37 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.min.css">
 
     <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
 
     <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <link rel="shortcut icon" type="image/png" href="/public/img/favicon.png">
-    <script src="/js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/js/angular.min.js" type="text/javascript" charset="utf-8"></script>
     <script src="/js/myapp.js" type="text/javascript" charset="utf-8"></script>
   </head>
 
-  <body ng-controller="MainController as main">
+  <body ng-controller="MainController">
     <div class="cover">
       <img class="img-rounded" id="logo" src="http://img2.imgtn.bdimg.com/it/u=2555238761,1521374877&fm=15&gp=0.jpg">
     	<h1 class="cover-heading">Silver Fern Visa Sporadic</h1>
       <a id="link" href="http://www.immigration.govt.nz/migrant/stream/work/silverfern/jobsearch.htm" title="Immigration - New Zealand">Immigration - New Zealand</a>
-      <div class="email-box">        
-        <input id="email" class="input-lg" type="email" placeholder="Enter your email address to receive notification" ng-model="main.email">
-        <button class="btn-primary btn-lg" ng-click="main.addUser()">Notify Me!</button>
+      <div class="email-box input-group span7"> 
+        <input class="input-lg" type="email" placeholder="Enter your email address to receive notification" ng-model="email" id="email">
+        <span class="input-group-btn">
+        <button type="submit" class="btn-success btn-lg" ng-click="addUser()">Notify Me!</button>
+        </span>
       </div>
       <div class="statistic">
-        <p ng-hide="{{main.user_count==0}}">{{main.user_count}} people are waiting for notification.</p> 
-        <div ng-repeat="user in main.users">
-          <p>Email: {{user}}</p>
+        <!-- WTF? why only show item when ng-hide="true" ? -->
+        <p ng-hide="{{user_count > 0}}">{{user_count}} people are waiting for notification.</p>
+        <div ng-repeat="user in users">
+          <!-- <p>Email: {{user}}</p> -->
         </div>
       </div>
     </div>
