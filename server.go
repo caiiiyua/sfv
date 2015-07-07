@@ -7,9 +7,10 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"sfv/sfv"
 	"strings"
 	"time"
+
+	"github.com/caiiiyua/sfv/sfv"
 
 	"database/sql"
 
